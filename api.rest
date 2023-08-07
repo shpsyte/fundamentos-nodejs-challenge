@@ -1,0 +1,108 @@
+@baseUrl = http://localhost:3333
+
+### Create a user
+POST {{ baseUrl }}/users
+Content-Type: application/json
+
+{
+    "name": "jose",
+    "username": "jose"
+}
+
+### Get all todos by user
+GET {{ baseUrl }}/todos
+Content-Type: application/json
+username: jose
+
+
+### Create a todo
+POST {{ baseUrl }}/todos
+Content-Type: application/json
+username: jose
+
+{
+    "title": "test",
+    "deadline": "2021-08-07"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Get Users by CPF
+GET {{ baseUrl }}/account 
+cpf: 123
+Content-Type: application/json
+
+
+### Create an account
+POST  {{ baseUrl }}/account
+Content-Type: application/json
+
+{
+    "cpf": "123",
+    "name": "jose"
+}
+
+### Get statement by CPF
+GET {{ baseUrl }}/statement
+Content-Type: application/json
+cpf: 123
+
+### Get statement by CPF and data
+GET {{ baseUrl }}/statement/date?date=2023-08-07
+Content-Type: application/json
+cpf: 123
+
+### Get balance by CPF
+GET {{ baseUrl }}/balance
+Content-Type: application/json
+cpf: 123
+
+
+### Make a deposit
+POST  {{ baseUrl }}/deposit
+Content-Type: application/json
+cpf: 123
+
+{
+    "amount": 100,
+    "description": "test"
+
+}
+
+
+### Make a withdraw
+POST  {{ baseUrl }}/withdraw
+Content-Type: application/json
+cpf: 123
+  
+  {
+      "amount": 100
+  
+  } 
+
+
+### update the name of the user
+PUT  {{ baseUrl }}/account
+Content-Type: application/json
+cpf: 123
+
+{
+    "name": "jose luiz"
+}
+ 
+
+### delete an account
+DELETE  {{ baseUrl }}/account
+Content-Type: application/json
+cpf: 1234
+
